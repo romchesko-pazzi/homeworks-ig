@@ -1,0 +1,42 @@
+.main {
+    font-family: cursive;
+    font-size: 20px;
+    max-width: 400px;
+    display: flex;
+}
+
+.first {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: #ffe2a0;
+    width: 400px;
+}
+
+.image {
+    width: 75px;
+    height: 75px;
+}
+
+.time {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    color: rgba(5, 3, 3, 0.62);
+}
+
+.name {
+    margin-left: 15px;
+    color: #5b1cce;
+}
+
+.message {
+    margin-left: 15px;
+}
+
