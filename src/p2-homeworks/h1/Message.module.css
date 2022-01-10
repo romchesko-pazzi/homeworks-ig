@@ -17,6 +17,7 @@
     flex-direction: column;
     background-color: #ffe2a0;
     width: 400px;
+    border-radius: 15px;
 }
 
 .image {
@@ -26,8 +27,8 @@
 
 .time {
     position: absolute;
-    bottom: 0px;
-    right: 0px;
+    bottom: 1px;
+    right: 10px;
     color: rgba(5, 3, 3, 0.62);
 }
 
