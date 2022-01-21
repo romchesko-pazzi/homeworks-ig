@@ -1,35 +1,29 @@
 import React from 'react'
 import Affair from './Affair'
-import {AffairType, FilterType} from './HW2'
-
+import {AffairType} from './HW2'
 
 type AffairsPropsType = {
-    data: Array<AffairType>
-    setFilter: (filter: FilterType) => void;
+    data: any
+    setFilter: any
     deleteAffairCallback: (_id: number) => void;
 }
 
 function Affairs(props: AffairsPropsType) {
-    const mappedAffairs = props.data.map((m: AffairType, i) => (
+    const mappedAffairs = props.data.map((m: AffairType) => (
         <Affair
-            key={i} // кеи ОБЯЗАТЕЛЬНЫ в 99% - так что лучше их писать всегда при создании компонент в мапе
-            affair={m.name}
-            _id={m._id}
+            key={m._id} // кеи ОБЯЗАТЕЛЬНЫ в 99% - так что лучше их писать всегда при создании компонент в мапе
+            affair={m}
             deleteAffairCallback={props.deleteAffairCallback}
         />
     ))
 
     const setAll = () => {
-        props.setFilter("all")
-    }
+    } // need to fix
     const setHigh = () => {
-        props.setFilter("high")
     }
     const setMiddle = () => {
-        props.setFilter("middle")
     }
     const setLow = () => {
-        props.setFilter("low")
     }
 
     return (

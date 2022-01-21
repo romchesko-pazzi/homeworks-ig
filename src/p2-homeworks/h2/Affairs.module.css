@@ -1,3 +1,5 @@
-.someClass {
-
+.main {
+   width: 380px;
+   display: flex;
+   justify-content:space-between;
 }
