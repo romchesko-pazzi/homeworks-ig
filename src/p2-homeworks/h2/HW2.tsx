@@ -25,6 +25,10 @@ export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): A
         return affairs.filter(f => f.priority === filter);
     } else if (filter === "middle") {
         return affairs.filter(f => f.priority === filter);
+    } else if (filter === "low") {
+        return affairs.filter(f => f.priority === filter);
+    } else if (filter === "all") {
+        return affairs;
     } else return affairs;
 }
 
