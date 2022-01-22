@@ -1,10 +1,10 @@
 import React from 'react'
 import Affair from './Affair'
-import {AffairType} from './HW2'
+import {AffairType, FilterType} from './HW2'
 
 type AffairsPropsType = {
-    data: any
-    setFilter: any
+    data: Array<AffairType>;
+    setFilter: (filter: FilterType) => void;
     deleteAffairCallback: (_id: number) => void;
 }
 
@@ -18,12 +18,16 @@ function Affairs(props: AffairsPropsType) {
     ))
 
     const setAll = () => {
-    } // need to fix
+        props.setFilter("all")
+    }
     const setHigh = () => {
+        props.setFilter("high")
     }
     const setMiddle = () => {
+        props.setFilter("middle")
     }
     const setLow = () => {
+        props.setFilter("low")
     }
 
     return (
