@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {ChangeEvent, useState} from 'react'
 import Greeting from './Greeting'
 
 type GreetingContainerPropsType = {
@@ -7,22 +7,23 @@ type GreetingContainerPropsType = {
 }
 
 // более простой и понятный для новичков
-// function GreetingContainer(props: GreetingPropsType) {
-
 // более современный и удобный для про :)
 // уровень локальной логики
-const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
-    const [name, setName] = useState<any>('') // need to fix any
-    const [error, setError] = useState<any>('') // need to fix any
+// const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
+function GreetingContainer(props: GreetingContainerPropsType) {
 
-    const setNameCallback = (e: any) => { // need to fix any
-        setName('') // need to fix
+    const [name, setName] = useState<string>('');
+    const [error, setError] = useState<string>('');
+    const [totalUsers, setTotalUsers] = useState<number>(0);
+
+    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
+        setName(e.currentTarget.value);
     }
     const addUser = () => {
-        alert(`Hello  !`) // need to fix
+        alert(`Hello ${name} !`)
+        setName("");
+        setTotalUsers(totalUsers + 1);
     }
-
-    const totalUsers = 0 // need to fix
 
     return (
         <Greeting
