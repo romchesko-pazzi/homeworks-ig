@@ -1,29 +1,40 @@
-import React, {ChangeEvent, useState} from 'react'
+import React, {ChangeEvent, useState, KeyboardEvent} from 'react'
 import Greeting from './Greeting'
+import {UserType} from "./HW3";
 
 type GreetingContainerPropsType = {
-    users: any // need to fix any
-    addUserCallback: any // need to fix any
+    users: Array<UserType>;
+    addUserCallback: (name: string) => void;
 }
 
 // более простой и понятный для новичков
+
 // более современный и удобный для про :)
 // уровень локальной логики
 // const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
 function GreetingContainer(props: GreetingContainerPropsType) {
-
     const [name, setName] = useState<string>('');
     const [error, setError] = useState<string>('');
-    const [totalUsers, setTotalUsers] = useState<number>(0);
 
-    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        setName(e.currentTarget.value);
+    const setNameCallback = (event: ChangeEvent<HTMLInputElement>) => {
+        setName(event.currentTarget.value);
     }
+
     const addUser = () => {
-        alert(`Hello ${name} !`)
-        setName("");
-        setTotalUsers(totalUsers + 1);
+        if (name !== "") {
+            props.addUserCallback(name)
+            alert(`Hello ${name} !`);
+            setName("");
+        }
     }
+
+    const onKeyPressCallback = (event: KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === "Enter") {
+            addUser();
+        }
+    }
+
+    const totalUsers = props.users.length;
 
     return (
         <Greeting
@@ -32,6 +43,7 @@ function GreetingContainer(props: GreetingContainerPropsType) {
             addUser={addUser}
             error={error}
             totalUsers={totalUsers}
+            onKeyPressCallback={onKeyPressCallback}
         />
     )
 }
