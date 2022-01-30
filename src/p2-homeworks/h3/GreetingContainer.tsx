@@ -17,14 +17,18 @@ function GreetingContainer(props: GreetingContainerPropsType) {
     const [error, setError] = useState<string>('');
 
     const setNameCallback = (event: ChangeEvent<HTMLInputElement>) => {
+        setError("");
         setName(event.currentTarget.value);
     }
 
     const addUser = () => {
         if (name !== "") {
-            props.addUserCallback(name)
+            props.addUserCallback(name.trim())
             alert(`Hello ${name} !`);
             setName("");
+        }
+        if (name === "") {
+            setError("name is required!");
         }
     }
 
