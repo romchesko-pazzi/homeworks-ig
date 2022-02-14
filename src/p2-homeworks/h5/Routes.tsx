@@ -1,5 +1,5 @@
 import React from 'react'
-import Error404 from "./pages/Error404";
+import {Error404} from "./pages/Error404";
 import {PreJunior} from "./pages/PreJunior";
 import {Route, Routes, Navigate} from "react-router-dom";
 import {Junior} from "./pages/Junior";
@@ -21,7 +21,7 @@ export function Routings() {
                 <Route path={PATH.junior} element={<Junior/>}/>
                 <Route path={PATH.juniorPlus} element={<JuniorPlus/>}/>
 
-                <Route element={<Error404/>}/>
+                <Route path={"*"} element={<Error404/>}/>
             </Routes>
         </div>
     )
