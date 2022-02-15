@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/homeworks-ig/static/css/main.d0187dd6.css",
-    "main.js": "/homeworks-ig/static/js/main.aab6d97b.js",
+    "main.js": "/homeworks-ig/static/js/main.fd804302.js",
     "index.html": "/homeworks-ig/index.html",
     "main.d0187dd6.css.map": "/homeworks-ig/static/css/main.d0187dd6.css.map",
-    "main.aab6d97b.js.map": "/homeworks-ig/static/js/main.aab6d97b.js.map"
+    "main.fd804302.js.map": "/homeworks-ig/static/js/main.fd804302.js.map"
   },
   "entrypoints": [
     "static/css/main.d0187dd6.css",
-    "static/js/main.aab6d97b.js"
+    "static/js/main.fd804302.js"
   ]
 }
