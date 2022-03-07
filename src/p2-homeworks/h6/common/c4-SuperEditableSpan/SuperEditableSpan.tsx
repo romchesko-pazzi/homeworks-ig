@@ -1,5 +1,6 @@
-import React, {DetailedHTMLProps, InputHTMLAttributes, HTMLAttributes, useState} from 'react'
+import React, {DetailedHTMLProps, InputHTMLAttributes, HTMLAttributes, useState, KeyboardEvent} from 'react'
 import SuperInputText from '../../../h4/common/c1-SuperInputText/SuperInputText'
+import s from "../../HW6.module.css";
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
@@ -30,18 +31,20 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
     const [editMode, setEditMode] = useState<boolean>(false)
     const {children, onDoubleClick, className, ...restSpanProps} = spanProps || {}
 
-    const onEnterCallback = () => {
-        // setEditMode() // выключить editMode при нажатии Enter
+    const onEnterCallback = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter") {
+            setEditMode(false);
+        }
 
         onEnter && onEnter()
     }
     const onBlurCallback = (e: React.FocusEvent<HTMLInputElement>) => {
-        // setEditMode() // выключить editMode при нажатии за пределами инпута
+        setEditMode(false);
 
         onBlur && onBlur(e)
     }
     const onDoubleClickCallBack = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
-        // setEditMode() // включить editMode при двойном клике
+        setEditMode(true);
 
         onDoubleClick && onDoubleClick(e)
     }
@@ -52,13 +55,15 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
         <>
             {editMode
                 ? (
-                    <SuperInputText
-                        autoFocus // пропсу с булевым значением не обязательно указывать true
-                        onBlur={onBlurCallback}
-                        onEnter={onEnterCallback}
+                    <div className={s.superInput}>
+                        <SuperInputText
+                            autoFocus // пропсу с булевым значением не обязательно указывать true
+                            onBlur={onBlurCallback}
+                            onKeyPress={onEnterCallback}
 
-                        {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
-                    />
+                            {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
+                        /></div>
+
                 ) : (
                     <span
                         onDoubleClick={onDoubleClickCallBack}

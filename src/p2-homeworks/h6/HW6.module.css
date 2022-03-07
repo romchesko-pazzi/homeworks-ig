@@ -1,0 +1,14 @@
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.editableSpan {
+    text-align: center;
+    font-size: 40px;
+}
+
+.superInput {
+    display: flex;
+    justify-content: center;
+}
