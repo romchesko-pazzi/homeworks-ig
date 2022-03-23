@@ -1,0 +1,22 @@
+.main {
+    color: black;
+    margin-left: 100px;
+    width: 500px;
+    background-color: #dbdbff;
+    border-radius: 7px;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list div {
+    padding: 10px 15px;
+}
+
+.buttons {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
