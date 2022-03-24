@@ -18,5 +18,9 @@
 .buttons {
     padding: 10px 15px;
     display: flex;
-    justify-content: space-evenly;
+    /*justify-content: ;*/
+}
+
+.buttons div {
+    margin-left: 7px;
 }
