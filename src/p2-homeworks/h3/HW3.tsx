@@ -15,7 +15,6 @@ function HW3() {
         let newUser = {id: v1(), name: name}
         setUsers([...users, newUser]);
     }
-    console.log(users);
 
     return (
         <div>
