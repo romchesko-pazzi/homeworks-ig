@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "./bll/store";
 import {loadingAC, LoadingStateType} from "./bll/loadingReducer";
 import s from "./HW10.module.css";
+import {hrHR} from "@mui/material/locale";
 
 function HW10() {
     // useSelector, useDispatch
@@ -19,31 +20,24 @@ function HW10() {
 
     return (
         <div style={{textAlign: "center"}}>
-            <hr/>
             homeworks 10
-
-            {/*should work (должно работать)*/}
             {loading.isLoading
                 ? (
                     <div className={s.loading}>
-                        <div> </div>
-                        <div> </div>
-                        <div> </div>
-                        <div> </div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                     </div>
                 ) : (
-                    <div>
+                    <div style={{marginBottom:"51px"}}>
                         <SuperButton onClick={setLoading}>set loading...</SuperButton>
                     </div>
                 )
             }
-
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<Alternative/>*/}
             <hr/>
         </div>
-    )
+)
 }
 
 export default HW10
