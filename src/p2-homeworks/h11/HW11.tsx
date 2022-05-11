@@ -17,7 +17,7 @@ function HW11() {
         <div className={s.hw11}>
             <div>
                 <span className={s.rangeValue}>{value1}</span>
-                <SuperRange onChangeRange={setValue1}/>
+                <SuperRange onChangeRange={setValue1} value={value1}/>
             </div>
             <div className={s.doubleRange}>
                 <div>{value1}</div>
