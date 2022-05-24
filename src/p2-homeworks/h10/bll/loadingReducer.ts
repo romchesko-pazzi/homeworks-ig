@@ -7,7 +7,7 @@ const initState: LoadingStateType = {
     isLoading: false
 }
 
-export const loadingReducer = (state: LoadingStateType = initState, action: LoadingACType): LoadingStateType => { // fix any
+export const loadingReducer = (state = initState, action: LoadingACType): LoadingStateType => { // fix any
     switch (action.type) {
         case 'LOADING': {
             return {...state, isLoading: !action.payload.isLoading}

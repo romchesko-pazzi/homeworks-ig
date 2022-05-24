@@ -1,14 +1,33 @@
-const initState = {
+import {AppStoreType} from "../../h10/bll/store";
 
+export type InitialStateType = {
+    color: string
 };
 
-export const themeReducer = (state = initState, action: any): any => { // fix any
+const initState: InitialStateType = {
+    color: "white"
+};
+
+
+type ActionType = ChangeThemeType;
+type ChangeThemeType = ReturnType<typeof changeThemeC>
+
+
+export const themeReducer = (state = initState, action: ActionType): InitialStateType => {
     switch (action.type) {
-        case "": {
-            return state;
+        case "CHANGE-THEME": {
+            return {...state, color: action.payload.option};
         }
-        default: return state;
+        default:
+            return state;
     }
 };
 
-export const changeThemeC = (): any => {}; // fix any
+export const changeThemeC = (option: string) => {
+    return {
+        type: "CHANGE-THEME",
+        payload: {option},
+    } as const
+};
+
+export const select = (state: AppStoreType) => state.theme

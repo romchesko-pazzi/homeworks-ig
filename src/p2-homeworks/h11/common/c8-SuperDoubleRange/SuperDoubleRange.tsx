@@ -1,4 +1,4 @@
-import React, {ChangeEvent} from 'react'
+import React from 'react'
 import {Box, Slider} from "@mui/material";
 import s from "./SuperDoubleRange.module.css";
 
