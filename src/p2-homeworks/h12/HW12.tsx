@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {changeThemeC, select} from "./bll/themeReducer";
 import SuperSelect from "../h7/common/c5-SuperSelect/SuperSelect";
 
-const themes = ["dark", "red", "green", "darkslateblue"];
+const themes = ["dark", "red", "green", "darkslateblue", "blue"];
 
 function HW12() {
     const {color} = useSelector(select);
@@ -20,8 +20,9 @@ function HW12() {
             <span className={s[color + '-text']}>
                 homeworks 12
             </span>
-
-            <SuperSelect options={themes} onChangeOption={(option) => changeTheme(option)}/>
+            <div>
+                <SuperSelect options={themes} onChangeOption={(option) => changeTheme(option)}/>
+            </div>
 
             <hr/>
         </div>

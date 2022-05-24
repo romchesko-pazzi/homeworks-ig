@@ -2,6 +2,10 @@
     background: dimgrey;
 }
 
+.blue {
+    background-color: #3cefff;
+}
+
 .dark-text {
     color: aliceblue;
 }
@@ -11,7 +15,7 @@
 }
 
 .red-text {
-    color: aqua;
+    color: #000000;
 }
 
 .green {
@@ -20,4 +24,8 @@
 
 .darkslateblue {
     background-color: darkslateblue;
+}
+
+.darkslateblue-text {
+    color: rgb(255, 234, 0);
 }
